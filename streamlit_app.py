@@ -37,3 +37,11 @@ from numpy.random import default_rng as rng
 df = pd.DataFrame(rng(0).standard_normal((20, 3)), columns=["a", "b", "c"])
 
 st.line_chart(df)
+
+import streamlit as st
+
+def page_2():
+    st.title("Page 2")
+
+pg = st.navigation(["page_1.py", page_2])
+pg.run()
