@@ -1,18 +1,14 @@
 import streamlit as st
 
 st.title("🎈 My project LPK Nanoteknologi Pangan")
-import streamlit as st
-import pandas as pd
-
-st.write(1234)
 st.write(
-    pd.DataFrame(
-        {
-            "first column": [1, 2, 3, 4],
-            "second column": [10, 20, 30, 40],
-        }
-    )
+    import streamlit as st
+
+st.badge("New")
+st.badge("Success", icon=":material/check:", color="green")
+
+st.markdown(
+    ":violet-badge[:material/star: Favorite] :orange-badge[⚠️ Needs review] :gray-badge[Deprecated]"
 )
-st.write()
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
