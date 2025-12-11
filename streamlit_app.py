@@ -4,16 +4,11 @@ st.title("🎈 My project LPK Nanoteknologi Pangan")
 
 import streamlit as st
 
-pages = {
-    "Your account": [
-        st.Page("create_account.py", title="Create your account"),
-        st.Page("manage_account.py", title="Manage your account"),
-    ],
-    "Resources": [
-        st.Page("learn.py", title="Learn about us"),
-        st.Page("trial.py", title="Try it out"),
-    ],
-}
+st.metric(label="Gas price", value=4, delta=-0.5, delta_color="inverse")
 
-pg = st.navigation(pages)
-pg.run()
+st.metric(
+    label="Active developers",
+    value=123,
+    delta=123,
+    delta_color="off",
+)
