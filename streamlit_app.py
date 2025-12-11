@@ -30,18 +30,18 @@ st.line_chart(
     color=["#FF0000", "#0000FF"],
 )
 
-import pandas as pd
-import streamlit as st
-from numpy.random import default_rng as rng
-
-df = pd.DataFrame(rng(0).standard_normal((20, 3)), columns=["a", "b", "c"])
-
-st.line_chart(df)
-
 import streamlit as st
 
-def page_2():
-    st.title("Page 2")
+pages = {
+    "Your account": [
+        st.Page("create_account.py", title="Create your account"),
+        st.Page("manage_account.py", title="Manage your account"),
+    ],
+    "Resources": [
+        st.Page("learn.py", title="Learn about us"),
+        st.Page("trial.py", title="Try it out"),
+    ],
+}
 
-pg = st.navigation(["page_1.py", page_2])
+pg = st.navigation(pages)
 pg.run()
