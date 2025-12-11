@@ -4,10 +4,15 @@ st.title("🎈 My project LPK Nanoteknologi Pangan")
 
 import pandas as pd
 import streamlit as st
-from numpy.random import default_rng as rng
 
 df = pd.DataFrame(
-    rng(0).standard_normal((50, 20)), columns=("col %d" % i for i in range(20))
+    [
+        {"command": "st.selectbox", "rating": 4, "is_widget": True},
+        {"command": "st.balloons", "rating": 5, "is_widget": False},
+        {"command": "st.time_input", "rating": 3, "is_widget": True},
+    ]
 )
+edited_df = st.data_editor(df)
 
-st.dataframe(df)
+favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
+st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
