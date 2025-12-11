@@ -1,14 +1,13 @@
 import streamlit as st
 
 st.title("🎈 My project LPK Nanoteknologi Pangan")
-st.write(
-    import streamlit as st
 
-st.badge("New")
-st.badge("Success", icon=":material/check:", color="green")
+import pandas as pd
+import streamlit as st
+from numpy.random import default_rng as rng
 
-st.markdown(
-    ":violet-badge[:material/star: Favorite] :orange-badge[⚠️ Needs review] :gray-badge[Deprecated]"
+df = pd.DataFrame(
+    rng(0).standard_normal((50, 20)), columns=("col %d" % i for i in range(20))
 )
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+
+st.dataframe(df)
